@@ -1,0 +1,45 @@
+# Project-specific folders to ignore
+data_analysis/
+results/
+local_only/
+ml_venv/
+test.txt
+
+# Data and figures
+*.csv
+*.png
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.h5
+
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment folders
+env/
+venv/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Output, results, and log files
+*.log
+*.out
+*.tmp
+*.bak
+
+# Ignore environment configuration files
+.env

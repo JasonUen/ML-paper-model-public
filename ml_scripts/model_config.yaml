@@ -1,0 +1,105 @@
+# this file is used to configure the model parameters and selected features for the models.
+
+RF:
+  params:
+    n_estimators: 160
+    max_depth: 15
+    min_samples_split: 6
+    min_samples_leaf: 1
+    max_features: "sqrt"
+    criterion: "poisson"
+  selected_features:
+    - TRS
+    - POP
+    - SWS
+    # - InPC
+    # - REDM
+
+GBR:
+  params:
+    n_estimators: 85
+    learning_rate: 0.07
+    max_depth: 3
+    max_features: null
+    subsample: 0.9
+    loss: "huber"
+    criterion: "friedman_mse"
+    min_samples_split: 2
+    min_samples_leaf: 4
+    alpha: 0.9
+  selected_features:
+    - TRS
+    - POP
+    - InPC
+    # - CS
+
+ADA:
+  params:
+    base_estimator:
+      type: DecisionTreeRegressor
+      params:
+        max_depth: 8
+    n_estimators: 81
+    learning_rate: 0.1
+    loss: "linear"
+  selected_features:
+    - TRS
+    - POP
+
+SVR:
+  params:
+    kernel: "rbf"
+    C: 16
+    gamma: "auto"
+    tol: 0.0001
+    epsilon: 0.02
+  selected_features:
+    - TRS
+    - POP
+
+MLR:
+  selected_features:
+    - TRS
+    - REDM
+    - CS
+    - InPC
+    # - POP
+
+Ridge:
+  params:
+    alpha: 0.2976
+  selected_features:
+    - POP
+    - TRS
+    - InPC
+    - CS
+    # - LACS_POP
+
+Lasso:
+  params:
+    alpha: 0.0002
+    max_iter: 10000
+  selected_features:
+    - POP
+    - TRS
+    # - InPC
+    # - CS
+    # - LACS_POP
+
+DNN:
+  params:
+    hidden_units1: 124
+    hidden_units2: 40
+    hidden_units3: 0
+    dropout_rate: 0.25
+    learning_rate: 0.001
+    k_init_1: "glorot_uniform"
+    k_init_2: "glorot_uniform"
+    k_init_3: "he_uniform"
+    optimizer: "Nadam"
+    activation1: "relu"
+    activation2: "tanh"
+    activation3: "softplus"
+    l2_reg: 0.0001
+    batch_size: 48
+    epochs: 50

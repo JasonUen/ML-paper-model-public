@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-paper-model"
+version = "0.1.0"
+description = "Machine learning models for county-level food waste predictive analytics"
+authors = [
+    { name = "Tinn-Shuan (Jason) Uen", email = "tinnshuan@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+keywords = ["machine learning", "predictive modeling", "data science"]
+
+dependencies = [
+    "numpy==1.26.4",
+    "pandas==2.3.1",
+    "scikit-learn==1.7.0",
+    "matplotlib==3.10.3",
+    "seaborn==0.13.2",
+    "scipy==1.15.3",
+    "joblib==1.5.1",
+    "tensorflow==2.16.2",
+    "tensorflow-macos==2.16.2",  # keep for Apple Silicon
+    "tensorflow-metal==1.2.0",   # GPU acceleration on M-series
+    "keras==3.10.0",
+    "h5py==3.14.0",
+    "scikeras==0.13.0",
+    "PyYAML==6.0.2"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "pytest",
+    "jupyter",
+    "ipython"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ml_scripts"]
+
+[project.urls]
+Homepage = "https://github.com/JasonUen/ML-paper-model"
+Issues = "https://github.com/JasonUen/ML-paper-model/issues"
