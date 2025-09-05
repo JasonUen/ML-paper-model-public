@@ -18,6 +18,8 @@ import yaml
 from utils import get_data
 import time
 
+# unit conversion
+MetricTon_to_kt = 10**(-3)
 start_time = time.time()
 # %%
 df = get_data(transform=True)
@@ -28,7 +30,9 @@ scaler.fit(df)
 data_trans = pd.DataFrame(scaler.transform(df), columns=df.columns)
 
 # read tuned parameters as a config
-with open("model_config.yaml", "r") as f:
+script_dir = os.path.dirname(__file__)
+config_path = os.path.join(script_dir, "model_config.yaml")
+with open(config_path, "r") as f:
     config = yaml.safe_load(f)
 
 # extract important target and input features
@@ -125,8 +129,8 @@ def repeated_cv_predictions(model, X, y, n_splits=5, n_repeats=20):
 def plot_abs_residual(model_name, y_true, y_pred):
     plt.rcParams.update({"font.size": 14})
     plt.figure(figsize=(10, 8))
-    plt.scatter(y_true, y_true - y_pred, alpha=0.3)
-    plt.xlabel("True Value")
+    plt.scatter(y_true*MetricTon_to_kt, y_true - y_pred, alpha=0.3)
+    plt.xlabel("Actual FW (kt/y)")
     plt.ylabel("Residual")
     plt.title(f"{model_name}")
     plt.axhline(0, color="red", linestyle="--")
@@ -139,8 +143,8 @@ def plot_relative_error(model_name, y_true, y_pred):
     epsilon = 1e-8
     plt.rcParams.update({"font.size": 14})
     plt.figure(figsize=(10, 8))
-    plt.scatter(y_true,np.abs(y_true - y_pred)/ (y_true + epsilon), alpha=0.3)
-    plt.xlabel("True Value")
+    plt.scatter(y_true*MetricTon_to_kt, np.abs(y_true - y_pred)/ (y_true + epsilon), alpha=0.3)
+    plt.xlabel("Actual FW (kt/y)")
     plt.ylabel("Relative Error")
     plt.title(f"{model_name}")
     plt.axhline(0, color="red", linestyle="--")

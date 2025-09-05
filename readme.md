@@ -49,6 +49,10 @@ Data can be provided upon request.
 	•	Support Vector Regression (SVR)
 	•	Deep Neural Network (Keras)
 
+## Post-analysis**  
+  - Unified plotting of model performance (MAE, RMSE, R²)  
+  - Feature importance: tree-based FI, permutation FI, and coefficients where available. Use FI_plots.py to visualize the results.
+
 ---
 
 ## How to Use This Project
@@ -67,13 +71,12 @@ This will create a folder named data_analysis/ in your project root directory, c
 	•	Correlation heatmaps
 	•	Statistics summary
 
-### 4. Tune Algorithms (Optional)
-After preprocessing, you can tune machine learning models using the provided scripts:
+### 4. Evaluate Models
+Each algorithm has a dedicated eval_*.py file under ml_scripts/. Example: eval_RF.py
 
-### 5. Evaluate Models
-Use the provided data or your own datasets to compare:
+### 5. Compare Models
+Use results_analysis.py in the results folder to compare:
 	•	Model performance (e.g., RMSE, MAE, R²)
-	•	Prediction residuals
 
 ---
 
