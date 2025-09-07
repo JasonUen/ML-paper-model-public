@@ -66,10 +66,7 @@ Once you have the data, update the `path_base_data` in **`ml_scripts/ML_Pre.py`*
 
 ### 3. Run Data Preprocessing
 Run ML_Pre.py to generate processed datasets and pre-modeling analysis results.
-This will create a folder named data_analysis/ in your project root directory, containing:
-	•	Cleaned and Box-Cox transformed data
-	•	Correlation heatmaps
-	•	Statistics summary
+This will create a folder named data_analysis/ in your project root directory, containing: clean, transformed data, correlation heatmaps, and statistics summary
 
 ### 4. Evaluate Models
 Each algorithm has a dedicated eval_*.py file under ml_scripts/. Example: eval_RF.py
