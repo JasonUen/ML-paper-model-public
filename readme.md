@@ -1,5 +1,11 @@
 # ML-paper-model
-This repository contains scripts and helper functions for:
+This repository contains scripts to conduct analyses in our publication :
+**Geospatial analytics and machine learning for forecasting county-level food waste in U.S. retail markets**  
+*Tinn-Shuan Uen, Luis F. Rodríguez*  
+Resources, Conservation & Recycling, 2026.  
+https://doi.org/10.1016/j.resconrec.2026.108906
+
+## Project structure
 1. Pre-modeling analysis
 2. Building, tuning, and evaluating regression models.
 
