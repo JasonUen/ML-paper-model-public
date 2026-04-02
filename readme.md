@@ -14,7 +14,7 @@ This repository contains scripts and helper functions for:
 
 ---
 
-## Python Version
+## Python version
 This project requires: Python 3.10.x for TensorFlow compatibility.
 
 A virtual environment is recommended:
@@ -36,11 +36,11 @@ cd ML-paper-model
 pip install -e .
 ```
 
-## Data Availability
+## Data availability
 The processed and raw datasets used in this project are not included in the repository for privacy and size considerations.
 Data can be provided upon request.
 
-## Models Included
+## Models included
 	•	Multiple Linear Regression (MLR)
 	•	Lasso & Ridge Regression
 	•	Random Forest Regression (RF)
@@ -55,29 +55,29 @@ Data can be provided upon request.
 
 ---
 
-## How to Use This Project
+## Steps in this project
 
-### 1. Request Data
+### 1. Request data
 The raw datasets required for running this project are **not included in this repository** for simplicity and size reasons.  
 Please contact the authors to request access.
 
-### 2. Configure Data Path
+### 2. Configure data path
 Once you have the data, update the `path_base_data` in **`ml_scripts/ML_Pre.py`** (around line 35):
 
-### 3. Run Data Preprocessing
+### 3. Run data preprocessing
 Run ML_Pre.py to generate processed datasets and pre-modeling analysis results.
 This will create a folder named data_analysis/ in your project root directory, containing: clean, transformed data, correlation heatmaps, and statistics summary
 
-### 4. Evaluate Models
+### 4. Evaluate models
 Each algorithm has a dedicated eval_*.py file under ml_scripts/. Example: eval_RF.py
 
-### 5. Compare Models
+### 5. Compare models
 Use results_analysis.py in the results folder to compare model performance (RMSE, MAE, R²).
 Use FI_plots.py in the ml_scripts folder to visualize the results.
 
 
 ---
 
-## Author
+## Authors
 - Tinn-Shuan (Jason) Uen
 - Luis F. Rodriguez
