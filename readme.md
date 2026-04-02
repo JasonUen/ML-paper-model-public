@@ -33,7 +33,7 @@ cd ML-paper-model
 ```
 2. Install the package in the editable mode
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
 ## Data availability
